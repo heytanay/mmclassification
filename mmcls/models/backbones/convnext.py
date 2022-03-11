@@ -313,7 +313,9 @@ class ConvNeXt(BaseBackbone):
                     outs.append(norm_layer(gap).flatten(1))
                 else:
                     outs.append(norm_layer(x))
-
+        print(len(outs))
+        for i in outs:
+            print(i.shape)
         return tuple(outs)
 
     def _freeze_stages(self):
